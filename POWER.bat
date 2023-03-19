@@ -1,3 +1,3 @@
 echo off
 cls
-node tradev2.js
+node tradev.js
