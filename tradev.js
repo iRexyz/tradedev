@@ -40,7 +40,7 @@ const readlineSync = require("readline-sync");
   if ((await page.$("#qa_auth_LoginBtn > button")) !== null) {
     console.log(
       `[ ${moment().format("HH:mm:ss")} ] `,
-      chalk.yellow("Kamu harus login terlebih dahulu")
+      chalk.yellow("You must login first")
     );
     loginRequired = true;
   } else {
@@ -72,7 +72,7 @@ const readlineSync = require("readline-sync");
     let loginNameValue = await page.evaluate((el) => el.textContent, loginName);
     console.log(
       `[ ${moment().format("HH:mm:ss")} ] `,
-      chalk.green(`Berhasil login dengan akun : ${loginNameValue}`)
+      chalk.green(`Login successfully with account: ${loginNameValue}`)
     );
   } else {
     if ((await page.$("#avatar > vui-badge > vui-avatar > img")) !== null) {
@@ -95,7 +95,7 @@ const readlineSync = require("readline-sync");
     let loginNameValue = await page.evaluate((el) => el.textContent, loginName);
     console.log(
       `[ ${moment().format("HH:mm:ss")} ] `,
-      chalk.green(`Berhasil login dengan akun : ${loginNameValue}`)
+      chalk.green(`Login successfully with account: ${loginNameValue}`)
     );
   }
 
@@ -106,7 +106,7 @@ const readlineSync = require("readline-sync");
 
   console.log(
     `[ ${moment().format("HH:mm:ss")} ] `,
-    chalk.green("Trading menggunakan akun Demo")
+    chalk.green("Trade using a Demo account")
   );
 
   console.log(
