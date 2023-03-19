@@ -116,13 +116,11 @@ const readlineSync = require("readline-sync");
 
   await delay(2000);
 
-  let kompen = ["12", "15", "30", "60", "120", "240", "480", "957"];
+  let kompen = ["12", "15", "30", "60", "120", "240", "480", "960"];
 
   await page.evaluate(`document.querySelector("[id='amount-counter']").value = ${kompen[0]}`)
   await page.evaluate(`document.querySelector("[id='amount-counter']").dispatchEvent(new Event('input'))`)
 
-  // await page.evaluate(`document.querySelector("[id='amount-counter']").value = ${kompen[0]}`)
-  // await page.click("vui-input-number > input[type=text]");
 
   console.log("");
   const time = new Date();
@@ -163,7 +161,7 @@ const readlineSync = require("readline-sync");
         j = 0;
         i = 0;
       }
-      if (i == 4) i = 0;
+      if (i == 9) i--;
       console.log(`              Next open ${kompen[i]}`);
       console.log("");
     } else if (type == false) {
@@ -191,17 +189,14 @@ const readlineSync = require("readline-sync");
         j = 0;
         i = 0;
       }
-      if (i == 4) i = 0;
+      if (i == 9) i--;
       console.log(`              Next open ${kompen[i]}`);
       console.log("");
     }
     if (ifKompen) {
       
-  await page.evaluate(`document.querySelector("[id='amount-counter']").value = ${kompen[i]}`)
-  await page.evaluate(`document.querySelector("[id='amount-counter']").dispatchEvent(new Event('input'))`)
-
-      // await page.evaluate(`document.querySelector("[id='amount-counter']").value = ${kompen[i]}`)
-      // await page.click("vui-input-number > input[type=text]");
+    await page.evaluate(`document.querySelector("[id='amount-counter']").value = ${kompen[i]}`)
+    await page.evaluate(`document.querySelector("[id='amount-counter']").dispatchEvent(new Event('input'))`)
     }
   }
 })();
