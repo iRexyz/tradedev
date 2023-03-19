@@ -116,7 +116,7 @@ const readlineSync = require("readline-sync");
 
   await delay(2000);
 
-  let kompen = ["12", "15", "30", "60", "120", "240", "480", "960"];
+  let kompen = ["12", "15", "34", "77", "173", "390", "877", "1974", "4441"];
 
   await page.evaluate(`document.querySelector("[id='amount-counter']").value = ${kompen[0]}`)
   await page.evaluate(`document.querySelector("[id='amount-counter']").dispatchEvent(new Event('input'))`)
@@ -161,7 +161,7 @@ const readlineSync = require("readline-sync");
         j = 0;
         i = 0;
       }
-      if (i == 9) i--;
+      if (i == 10) i--;
       console.log(`              Next open ${kompen[i]}`);
       console.log("");
     } else if (type == false) {
@@ -189,7 +189,7 @@ const readlineSync = require("readline-sync");
         j = 0;
         i = 0;
       }
-      if (i == 9) i--;
+      if (i == 10) i--;
       console.log(`              Next open ${kompen[i]}`);
       console.log("");
     }
